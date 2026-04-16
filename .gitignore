@@ -1,9 +1,5 @@
-.env
 output/*.png
 output/*.jpg
 output/*.txt
 output/*.json
-__pycache__/
-*.pyc
 .DS_Store
-venv/

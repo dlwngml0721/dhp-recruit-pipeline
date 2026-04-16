@@ -18,11 +18,12 @@
 ### 1. Figma MCP로 이미지 생성
 
 - Figma 파일 키: `byXx50MB9bSu1x6bqjWmla`
-- 템플릿 노드 ID: `1:2`
+- 템플릿 노드 ID: `152:2` (레이어 이름: `newTemplate/1`)
 - 아래 순서로 실행:
-  1. template(1:2) 복제
+  1. newTemplate/1(152:2) 복제
   2. 복제본에서 "variable" 텍스트 노드 찾기
-  3. Noto Sans KR Bold 폰트 로드 후 텍스트를 `(기업종류 / 포지션)` 형태로 변경
+  3. **반드시** Noto Sans KR Bold 로드 → `setRangeFontName(0, len, Noto Sans KR Bold)`로 폰트 변경 → `deleteCharacters` + `insertCharacters`로 `(기업종류 / 포지션)` 작성
+     - ⚠️ 원본 템플릿은 Pretendard Bold를 쓰지만 플러그인 샌드박스에서 Pretendard 로드 불가 → 반드시 Noto Sans KR Bold로 교체 후 써야 렌더링됨 (단순 `.characters` 할당만 하면 데이터만 바뀌고 화면엔 반영 안 됨)
   4. 복제본 이름을 기업명으로 설정
   5. viewport를 복제본으로 이동
 - 사용자에게 "Figma 데스크톱에서 Export해주세요" 안내
